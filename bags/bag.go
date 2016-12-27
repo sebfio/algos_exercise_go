@@ -55,16 +55,14 @@ func (b Bag) Is_empty() bool {
 	}
 }
 
-func Init() *Bag {
-	b := new(Bag)
+func (b *Bag)Init(){
 	b.size = 0
 	b.head = nil
-
-	return b
 }
 
 // func main() {
-// 	b := Init()
+// 	b := new(Bag)
+// 	b.Init()
 
 // 	fmt.Println(b.size)
 
