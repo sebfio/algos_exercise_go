@@ -5,7 +5,7 @@ import (
 //	"fmt"
 )
 
-type bag interface {
+type Iterable interface {
 	Add_item()
 	Iterate() []int
 	Is_empty() bool
