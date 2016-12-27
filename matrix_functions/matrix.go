@@ -28,7 +28,7 @@ func matrix_mult(x [][]float64, y [][]float64) ([][]float64, error) {
 	for i := 0; i < len(x); i++ {
 		for j := 0; j < len(x[0]); j++ {
 			for k := 0; k < len(y); k++ {
-				result[i][k] += x[i][k] * y[k][i]
+				result[i][j] += x[i][k] * y[k][j]
 			} 
 		}
 	}
