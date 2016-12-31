@@ -33,13 +33,8 @@ func (u *union_t)union(p, q int) {
 		return
 	}
 
-	// otherwise make all connection of id pid = qid
-	for i := 0; i < u.n_connections; i++ {
-		if u.connection[i] == pid {
-			u.connection[i] = qid
-		}
-	}
-
+	u.connection[p] = qid
+	
 	// decrement number of connections by 1
 	u.n_connections--
 }
@@ -48,7 +43,10 @@ func (u *union_t)union(p, q int) {
  *	Identifier for p
  **/
 func (u *union_t)find(p int) int{
-	return u.connection[p]
+	for p != u.connection[p] {
+		p = u.connection[p]
+	}
+	return p
 }
 
 /**
